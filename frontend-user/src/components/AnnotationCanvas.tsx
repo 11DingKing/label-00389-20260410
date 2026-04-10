@@ -40,7 +40,7 @@ function baseToScreen(point: Point, scale: number): Point {
 function getCanvasPoint(e: React.PointerEvent<HTMLCanvasElement>, canvas: HTMLCanvasElement): Point {
   const rect = canvas.getBoundingClientRect();
   // 计算 canvas 实际像素与 CSS 像素的比例
-  // 当浏览器缩放时，这个比例会变化，需要正确处理
+  // 当浏览器缩放时，rect.width/height 会变化，需要正确处理
   const scaleX = canvas.width / rect.width;
   const scaleY = canvas.height / rect.height;
   return {
